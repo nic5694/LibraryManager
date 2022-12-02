@@ -1,15 +1,17 @@
 package librarymanager.librarymanager.entity;
 
 import jakarta.persistence.*;
+import librarymanager.librarymanager.request.LibraryRequest;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
 
 @Entity
 @Table(name = "libraries")
 @Setter
 @Getter
+@NoArgsConstructor
 public class Library {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -19,4 +21,11 @@ public class Library {
     private String phone;
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
+
+    public Library(LibraryRequest libraryRequest){
+        name = libraryRequest.getName();
+        phone = libraryRequest.getPhone();
+        address = new Address(libraryRequest.getAddress());
     }
+    }
+

@@ -1,7 +1,7 @@
 package librarymanager.librarymanager.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import librarymanager.librarymanager.request.AddressRequest;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,4 +23,12 @@ public class Address {
     private String country;
     @Column(name = "postal_code", nullable = false)
     private String postalCode;
+
+    public Address(AddressRequest addressRequest){
+        street = addressRequest.getStreet();
+        city = addressRequest.getCity();
+        province = addressRequest.getProvince();
+        country = addressRequest.getCountry();
+        postalCode = addressRequest.getPostalCode();
+    }
 }
