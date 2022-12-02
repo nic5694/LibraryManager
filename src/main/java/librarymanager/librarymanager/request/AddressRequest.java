@@ -12,8 +12,6 @@ public class AddressRequest {
     @NotBlank
     private String city;
     @NotBlank
-    private String country;
-    @NotBlank
     private String province;
     @NotBlank
     private String postalCode;

@@ -19,8 +19,6 @@ public class Address {
     private String city;
     @Column(nullable = false)
     private String province;
-    @Column(nullable = false)
-    private String country;
     @Column(name = "postal_code", nullable = false)
     private String postalCode;
 
@@ -28,7 +26,6 @@ public class Address {
         street = addressRequest.getStreet();
         city = addressRequest.getCity();
         province = addressRequest.getProvince();
-        country = addressRequest.getCountry();
         postalCode = addressRequest.getPostalCode();
     }
 }

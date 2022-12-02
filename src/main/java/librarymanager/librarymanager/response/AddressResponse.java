@@ -26,7 +26,6 @@ public class AddressResponse {
         street = address.getStreet();
         city = address.getCity();
         province = address.getProvince();
-        country = address.getCountry();
         postalCode = address.getPostalCode();
     }
 }
