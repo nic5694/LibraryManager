@@ -15,4 +15,6 @@ public class AddressRequest {
     private String province;
     @NotBlank
     private String postalCode;
+    @NotBlank
+    private String country;
 }

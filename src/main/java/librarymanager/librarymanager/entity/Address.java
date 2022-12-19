@@ -22,10 +22,14 @@ public class Address {
     @Column(name = "postal_code", nullable = false)
     private String postalCode;
 
+    @Column(nullable = false)
+    private String country;
+
     public Address(AddressRequest addressRequest){
         street = addressRequest.getStreet();
         city = addressRequest.getCity();
         province = addressRequest.getProvince();
         postalCode = addressRequest.getPostalCode();
+        country = addressRequest.getCountry();
     }
 }

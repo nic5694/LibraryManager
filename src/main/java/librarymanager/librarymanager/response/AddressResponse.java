@@ -1,10 +1,6 @@
 package librarymanager.librarymanager.response;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import librarymanager.librarymanager.entity.Address;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,7 +21,8 @@ public class AddressResponse {
     public AddressResponse(Address address){
         street = address.getStreet();
         city = address.getCity();
-        province = address.getProvince();
         postalCode = address.getPostalCode();
+        province = address.getProvince();
+        country = address.getCountry();
     }
 }

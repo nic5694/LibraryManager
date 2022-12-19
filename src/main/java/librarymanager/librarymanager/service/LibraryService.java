@@ -6,8 +6,13 @@ import librarymanager.librarymanager.exception.RessourceNotFoundException;
 import librarymanager.librarymanager.repository.BookRepository;
 import librarymanager.librarymanager.repository.LibraryRepository;
 import librarymanager.librarymanager.request.BookRequest;
+import librarymanager.librarymanager.request.LibraryRequest;
+import librarymanager.librarymanager.response.LibraryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class LibraryService {
@@ -17,9 +22,24 @@ public class LibraryService {
     @Autowired
     BookRepository bookRepository;
     public Book addBookToLibrary(long libraryId, BookRequest bookRequest){
-         Library library = libraryRepository.findById(libraryId).orElseThrow(()-> new RessourceNotFoundException("Library not found"));
+         Library library = libraryRepository.findById(libraryId).orElseThrow(()-> new RessourceNotFoundException("Library id not found"));
          Book bookToBeAdded = new Book(bookRequest);
          bookToBeAdded.setLibrary(library);
          return bookRepository.save(bookToBeAdded);
+    }
+    public List<Book> getAllBooks(long libraryId){
+        return bookRepository.findByLibraryId(libraryId);
+    }
+
+    public LibraryResponse addLibrary(LibraryRequest libraryRequest){
+        Library library = new Library(libraryRequest);
+        libraryRepository.save(library);
+        return new LibraryResponse(library);
+    }
+
+    public List<Library> getAllLibraries(){
+        ArrayList<Library> libraryList = new ArrayList<>();
+        libraryRepository.findAll().forEach(libraryList::add);
+        return libraryList;
     }
 }

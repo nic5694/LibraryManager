@@ -10,10 +10,11 @@ import java.util.List;
 public interface BookRepository extends CrudRepository<Book, Long> {
     List<Book> findByLibraryId(long id);
 
+
     // findByLibraryNameLike(String name);
     //q: method that gets me all books from a library that has a name like something
     //a:
-    List<Book> findByLibraryIdAAndBookLike(long libraryId, String name);
+    // List<Book> findByLibraryIdAAndBookLike(long libraryId, String name);
 
     //q: method that gets me all books from a library that has a name like something
     //a:
