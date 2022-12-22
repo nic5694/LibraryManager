@@ -1,12 +1,13 @@
-import { Container, Nav } from "react-bootstrap";
-
-function Navbar() {
+import { Navbar, Container, NavLink } from "react-bootstrap";
+function NavBar() {
     return(
-        <Navbar bg="light" expand="lg">
-            <Container>
-                <Navbar.Brand href="#home">Library Center</Navbar.Brand>
-            </Container>
-        </Navbar>
+        <div>
+            <Navbar bg="light" expand="lg">
+                <Container>
+                    <Navbar.Brand href="#home">Library Center</Navbar.Brand>
+                </Container>
+            </Navbar>
+        </div>
     )
 }
-export default Navbar;
+export default NavBar;

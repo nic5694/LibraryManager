@@ -20,7 +20,9 @@ function LibraryList() {
         <div className="LibraryListContainer">
             <div className="LibraryItemContainer">
                     {library.map((item) => {
-                        return <LibraryItem key={item} item={item} />
+                        return <LibraryItem 
+                        key={item} 
+                        item={item} />
                     })}
             </div>
         </div>
