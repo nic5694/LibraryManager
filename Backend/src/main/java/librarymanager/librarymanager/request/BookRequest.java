@@ -10,6 +10,8 @@ import lombok.Setter;
 @Getter
 public class BookRequest {
     @NotBlank
+    private long id;
+    @NotBlank
     private String title;
     @NotBlank
     private String Author;

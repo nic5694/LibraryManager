@@ -11,6 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BookResponse {
+    private long id;
     private String title;
     private String author;
     private String isbn;
@@ -18,6 +19,7 @@ public class BookResponse {
     private LibraryResponse library;
 
     public BookResponse(Book book){
+        id = book.getId();
         title = book.getTitle();
         author = book.getAuthor();
         isbn = book.getIsbn();
