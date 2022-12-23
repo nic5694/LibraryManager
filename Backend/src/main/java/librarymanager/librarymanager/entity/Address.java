@@ -26,6 +26,7 @@ public class Address {
     private String country;
 
     public Address(AddressRequest addressRequest){
+        id = addressRequest.getId();
         street = addressRequest.getStreet();
         city = addressRequest.getCity();
         province = addressRequest.getProvince();

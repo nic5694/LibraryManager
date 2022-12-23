@@ -23,6 +23,7 @@ public class Library {
     private Address address;
 
     public Library(LibraryRequest libraryRequest){
+        id = libraryRequest.getId();
         name = libraryRequest.getName();
         phone = libraryRequest.getPhone();
         address = new Address(libraryRequest.getAddress());

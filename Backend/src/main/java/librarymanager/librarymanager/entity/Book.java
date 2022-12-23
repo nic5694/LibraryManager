@@ -32,6 +32,7 @@ public class Book {
     private Library library;
 
     public Book(BookRequest bookRequest){
+        id = bookRequest.getId();
         title = bookRequest.getTitle();
         author = bookRequest.getAuthor();
         isbn = bookRequest.getIsbn();
