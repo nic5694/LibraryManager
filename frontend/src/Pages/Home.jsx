@@ -18,10 +18,19 @@ function Home() {
         console.log(error);
       });
   };
-
+  /*
+  useEffect(() => {
+    const showBooks = () => {
+      return (
+        <BookList libraryId={selectedId} />
+      );
+    };
+showBooks();
+},[selectedId]);
+*/
   useEffect(() => {
     getLibraryList();
-  }, []);
+  }, [])
 
   const showBooks = () => {
     return (
@@ -30,7 +39,7 @@ function Home() {
   }; 
   useEffect(() => {
     showBooks();
-  }, [selectedId]);//needs to refresh 
+  }, [selectedId]);//needs to refresh */
 
   const handleChange = (event) => {
     setSelectedId(event.target.value);

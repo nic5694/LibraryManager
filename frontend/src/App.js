@@ -1,9 +1,10 @@
 import './App.css';
 import Home from './Pages/Home';
 import {Routes, Route} from 'react-router-dom';
-import BookInventory from './Pages/BookInventory';
+//import { BrowserRouter as Router, Route } from 'react-router-dom';
 import AddBook from './Pages/AddBook';
 import DeleteBook from './Pages/DeleteBook';
+import EditBook from './Pages/EditBook';
 
 function App() {
   return (
@@ -19,7 +20,20 @@ function App() {
       <Routes>
         <Route path="/DeleteBook" element={<DeleteBook />} />
       </Routes>
+
+      <Routes>
+        <Route path="/EditBook/:Id" element={<EditBook />} />       
+      </Routes>
     </div>
+    /*
+          <Route exact path="/edit/:Id" render={(props) => <EditBook Id={Id} {...props} />} />
+     component={EditBook} />
+    <Router>
+      <Route path="/" exact component={Home} />
+      <Route path="/AddBook" component={AddBook} />
+      <Route path="/DeleteBook" component={DeleteBook} />
+      <Route path="/edit/:bookId" component={EditBook} />
+    </Router>*/
   );
 }
 
