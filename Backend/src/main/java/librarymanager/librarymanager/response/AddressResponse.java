@@ -12,6 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AddressResponse {
+    private long id;
     private String street;
     private String city;
     private String province;
@@ -19,6 +20,7 @@ public class AddressResponse {
     private String postalCode;
 
     public AddressResponse(Address address){
+        id = address.getId();
         street = address.getStreet();
         city = address.getCity();
         postalCode = address.getPostalCode();
