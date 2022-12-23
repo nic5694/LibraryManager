@@ -10,6 +10,8 @@ import lombok.Setter;
 @Getter
 public class LibraryRequest {
     @NotBlank
+    private long id;
+    @NotBlank
     private String name;
     @NotBlank
     private String phone;
