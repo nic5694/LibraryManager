@@ -7,10 +7,12 @@ function EditBook() {
     //const id = this.props.match.params.Id;
     const [book, setBook] = useState([]);
     const [formValues, setFormValues] = useState({
+        id:0,
         title: '',
         author: '',
         available: null,
-        isbn: ''
+        isbn: '',
+        library: null
     });
 
     const getBook = () => {
@@ -22,11 +24,16 @@ function EditBook() {
             console.log(error);
         })
     }
+    const handleUpdate = (event) => {
+        event.preventDefault();
+        
+        putBook();
+    }
     const putBook = () => {
-        axios.put("http://localhost:8080/api/books/" + Id)
+        axios.put("http://localhost:8080/api/books/" + Id, formValues)
         .then((response) => {
-            if(response.status === 201)
-                added();
+            if(response.status === 200)
+                updated();
         })
         .catch((error) => {
             failed();
@@ -37,29 +44,34 @@ function EditBook() {
     }, []);
     useEffect(() => {
         setFormValues({
+            id: book.id,
             title: book.title,
             author: book.author,
-            available: book.available, //see what this takes like to pass to the chekcbox for the vlaue
-            isbn: book.isbn
+            available: book.available, //see what this takes like to pass to the chekcbox for the value also allow modify on the values its being annoying
+            isbn: book.isbn,
+            library: book.library
         })
     }, [book]);
     function handleChange(event) {
         setFormValues({
           ...formValues,
-          [event.target.name]: event.target.value,
+          [event.target.name]: event.target.value
         });
       }
-    const added = () => toast.success("Succefully Updated the Book!");
+    const updated = () => toast.success("Succefully Updated the Book!");
     const failed = () => toast.error("Failed to Add Book!");
     return(
         <div>
-            <form onSubmit={putBook}>
-                <input type="text" value={formValues.title} onChange={handleChange} />
-                <input type="text" value={formValues.author} onChange={handleChange} />
-                <input type="text" value={formValues.isbn} onChange={handleChange} />
-                <input type="checkbox" value={formValues.available} onChange={handleChange} name="available"/>
+            <form onSubmit={handleUpdate}>
+                <label for="title">Title</label>
+                <input type="text" value={formValues.title} name="Title" onChange={handleChange} />
+                <label for="author">Author</label>
+                <input type="text" value={formValues.author} name="Author" onChange={handleChange}/>
+                <label for="isbn">ISBN</label>
+                <input type="text" value={formValues.isbn} name="ISBN" onChange={handleChange}/>
                 <label for="available">Available</label>
-                <button type="submit">Add Book</button>
+                <input type="checkbox" value={formValues.available} onChange={handleChange}name="available"/>
+                <button type="submit">Update</button>
             </form>
         </div>
     )

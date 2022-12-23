@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class BookRequest {
-    @NotBlank
+    @NotNull
     private long id;
     @NotBlank
     private String title;
