@@ -26,7 +26,7 @@ public class Book {
     private String isbn;
     @Column(nullable = false)
     private Boolean available;
-    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    @ManyToOne(optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "library_id")
     private Library library;
