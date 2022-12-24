@@ -53,5 +53,8 @@ public class LibraryService {
         else
             throw new RessourceNotFoundException("Library id not found");
     }
+    public List<Book> findAllByLibraryIdAndSearchQuery(String searchQuery, long id){
+        return bookRepository.findAllByLibraryIdAndSearchQuery(id, searchQuery);
+    }
 
 }

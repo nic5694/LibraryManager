@@ -58,4 +58,13 @@ public class LibraryController {
     public void deleteLibrary(@PathVariable long libraryId){
         libraryService.deleteLibraryById(libraryId);
     }
+
+    @GetMapping("/{libraryId}/books/search/query")
+    public List<BookResponse> findAllByLibraryIdAndTitleLike(@PathVariable("libraryId") Long libraryId, @RequestParam("query") String query) {
+        List<BookResponse> bookResponseList = new ArrayList<>();
+        libraryService.findAllByLibraryIdAndSearchQuery(query, libraryId).forEach(book -> bookResponseList.add(new BookResponse(book)));
+        return bookResponseList;
+    }
+
+
 }
