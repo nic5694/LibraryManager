@@ -1,6 +1,8 @@
 import NavBar from "../Components/NavBar";
 import { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function AddLibrary () {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -21,11 +23,11 @@ function AddLibrary () {
     }
     axios.post("http://localhost:8080/api/libraries", library)
     .then(response => {
-        //toastify
+        sucess();
         console.log(response);
     })
     .catch(error => {
-        //toastify
+        failed();
         console.log(error);
     })
   };
@@ -37,6 +39,13 @@ function AddLibrary () {
       [name]: value,
     });
   };
+
+  const sucess = () => toast.success("Succefully Added Library!", {
+    position: toast.POSITION.TOP_RIGHT
+  });
+  const failed = () => toast.error("Failed to Add Library!", {
+    position: toast.POSITION.TOP_RIGHT
+    });
 
   return (
     <div className="addLibraryFormContainer">
@@ -67,6 +76,7 @@ function AddLibrary () {
       </fieldset>
 
       <button type="submit">Add Library</button>
+      <ToastContainer />
     </form>
     </div>
   );

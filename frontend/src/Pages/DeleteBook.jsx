@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import {toast, ToastContainer} from "react-toastify";
 
 function DeleteBook () {
   const [bookList, setBookList] = useState([]);
@@ -25,9 +26,11 @@ function DeleteBook () {
     axios.delete("http://localhost:8080/api/books/" + bookId)
       .then(response => {
         getAllbooks();
+        success();
         window.location.href = "/";
       })
       .catch(error => {
+        failed();
         console.log(error);
       })
   }
@@ -35,6 +38,9 @@ function DeleteBook () {
   const handleChange = (event) => {
     setSelectedId(event.target.value);
   }
+  
+  const success = () => {toast.success("Sucefully deleted book}", {position: toast.POSITION.TOP_RIGHT})};
+  const failed = () => {toast.error("Failed to delete book", {position: toast.POSITION.TOP_RIGHT})};
   return (
     <div className="deleteBookContainer">
       <div className="deleteBookHeader">
@@ -50,6 +56,7 @@ function DeleteBook () {
         })}
       </select>
       <button type="submit" onClick={() => deleteBook(1)}>Delete Book</button>
+      <ToastContainer />
     </div>
   )
 }

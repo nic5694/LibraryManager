@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-import DeleteBtn from "../Components/DeleteBtn";
 import NavBar from "../Components/NavBar";
 function EditBook() {
     const {Id} = useParams();
@@ -22,6 +21,7 @@ function EditBook() {
         })
         .catch((error) => {
             console.log(error);
+            
         })
     }
     const handleUpdate = (event) => {
@@ -83,6 +83,7 @@ function EditBook() {
                 <label for="available">Available</label>
                 <input type="checkbox" value={formValues.available} onChange={handleChange}name="available"/>
                 <button type="submit">Update</button>
+                <ToastContainer />
             </form>
         </div>
     )

@@ -12,9 +12,11 @@ function NavBar(props) {
         .then(response => {
             console.log(response)
             window.location.href = "/";
+            sucessfullyDeleted();
         })
         .catch(error => {
             console.log(error)
+            failedToDelete();
         })
     }
     const deleteBook = () => {
@@ -22,9 +24,11 @@ function NavBar(props) {
           .then(response => {
             window.history.back();
             console.log(response)
+            sucessfullyDeleted();
           })
           .catch(error => {
             console.log(error);
+            failedToDelete();
           })
       }
       const determineNav = () => {
@@ -37,6 +41,8 @@ function NavBar(props) {
         else return null
        
       }
+      const sucessfullyDeleted = toast.success(`Successfully deleted ${library ? "library" : "book"}`, {position: "top-right"});
+      const failedToDelete = toast.error(`Failed to delete ${library ? "library" : "book"}`, {position: "top-right"});
       useEffect(() => {
         determineNav();
       }, [library, id])
@@ -49,6 +55,7 @@ function NavBar(props) {
         {determineNav()}
       </Container>
     </Navbar>
+    <ToastContainer />
         </div>
       );
 }

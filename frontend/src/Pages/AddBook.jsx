@@ -2,6 +2,7 @@ import NavBar from "../Components/NavBar";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useParams } from "react-router-dom";
 //TODO add validation for the add
 function AddBook(){
@@ -39,8 +40,12 @@ function AddBook(){
                     failed();
                 })
             }
-    const added = () => toast.success("Succefully Added Book!");
-    const failed = () => toast.error("Failed to Add Book!");
+    const added = () => toast.success("Succefully Added Book!", {
+        position: toast.POSITION.TOP_RIGHT
+    });
+    const failed = () => toast.error("Failed to Add Book!", {
+        position: toast.POSITION.TOP_RIGHT
+    });
     return(
         <div className="addBookContainer">
             <NavBar />
@@ -54,6 +59,7 @@ function AddBook(){
                 <input type="checkbox" name="available"/>
                 <label for="available">Available</label>
                 <button type="submit">Add Book</button>
+                <ToastContainer />
             </form>
         </div>
     )

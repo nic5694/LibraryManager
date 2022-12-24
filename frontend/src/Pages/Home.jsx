@@ -2,7 +2,6 @@ import NavBar from "../Components/NavBar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import BookList from "../Components/BookList";
-import DeleteBtn from "../Components/DeleteBtn";
 
 function Home() {
   const [library, setLibrary] = useState([]);
