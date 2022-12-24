@@ -2,7 +2,7 @@ import NavBar from "../Components/NavBar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import BookList from "../Components/BookList";
-
+import App from '/Users/nicho/Documents/GitHub/LibraryManager/frontend/src/App.css'
 function Home() {
   const [library, setLibrary] = useState([]);
   const [selectedId, setSelectedId] = useState("");
@@ -41,7 +41,7 @@ function Home() {
   useEffect(() => {
     showBooks();
     libraryNavBar();
-  }, [selectedId]);//needs to refresh */
+  }, [selectedId, libraryNavBar]);//needs to refresh */
 
   const handleChange = (event) => {
     setSelectedId(event.target.value);
