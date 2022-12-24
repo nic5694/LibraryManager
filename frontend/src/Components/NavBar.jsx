@@ -2,6 +2,7 @@ import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
+import { Form } from "react-router-dom";
 function NavBar(props) {
     let library = props.library;
     let id = props.id;
@@ -39,8 +40,8 @@ function NavBar(props) {
         else if(id !== "" && !library && showAddLinks)
         return <Button onClick={deleteBook}>Delete Book</Button>
         else return null
-       
       }
+      
       const sucessfullyDeleted = toast.success(`Successfully deleted ${library ? "library" : "book"}`, {position: "top-right"});
       const failedToDelete = toast.error(`Failed to delete ${library ? "library" : "book"}`, {position: "top-right"});
       useEffect(() => {
@@ -52,6 +53,7 @@ function NavBar(props) {
       <Container>
         <Navbar.Brand href="/">Library Center</Navbar.Brand>
         <Nav.Link href="/">Home</Nav.Link>
+       
         {determineNav()}
       </Container>
     </Navbar>
