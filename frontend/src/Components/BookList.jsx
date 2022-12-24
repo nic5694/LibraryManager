@@ -42,8 +42,8 @@ function BookList (props) {
             <div className="bookItemContainer">
                 {books.map((item) => {
                     return(
-                        <div key={item.id}>
-                            <Link to={`/EditBook/${item.id}`}>
+                        <div className="bookLink" key={item.id}>
+                            <Link className="link" to={`/EditBook/${item.id}`}>
                                 <BookItem 
                                 key={item} 
                                 item={item} 

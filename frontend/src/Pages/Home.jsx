@@ -6,6 +6,7 @@ function Home() {
   const [library, setLibrary] = useState([]);
   const [selectedId, setSelectedId] = useState("");
   const [show, setShow] = useState(false);
+  const [title, setTitle] = useState("");
 
   const getLibraryList = () => {
     axios
@@ -28,6 +29,7 @@ function Home() {
   } 
   useEffect(() => {
     getLibraryList();
+    setTitle("Welcome Library Admin")
   }, [])
 
   const showBooks = () => {
@@ -35,11 +37,13 @@ function Home() {
     return (
       <BookList libraryId={selectedId} />
     );
-    }
+  }
   }; 
   useEffect(() => {
     showBooks();
     libraryNavBar();
+    if(selectedId !== "")
+      setTitle("Select a book")
   }, [selectedId, libraryNavBar]);//needs to refresh */
 
   const handleChange = (event) => {
@@ -50,8 +54,8 @@ function Home() {
         <div>
           {libraryNavBar()}
           <div className="header">
-            <h1 className="titles">Welcome Library Admin</h1>
-            <select name="libraryList" id="libraryList" onChange={handleChange}>
+            <h1 className="titles">{title}</h1>
+            <select className="libraryListDropdown" name="libraryList" id="libraryList" onChange={handleChange}>
               <option value="">Select Library</option>
               {library.map((item) => {
                 return <option value={item.id}>{"Library : " + item.name}</option>;

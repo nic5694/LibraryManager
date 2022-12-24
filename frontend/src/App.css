@@ -1,9 +1,11 @@
 .header{
     text-align: center;
+    margin-bottom: 2vh;
 }
 .bookListContainer {
     margin: auto;
     width: 50%;
+    height: 80vh;
     overflow-y: scroll;
 }
 .bookItemContainer{
@@ -13,7 +15,9 @@
     background-color: rgb(47, 54, 54);;
 }
 .titles{
+    margin-top: 2%;
     color: rgb(200, 200, 200);
+    text-align: center;
 }
 .itemContainer{
     background-color: white;
@@ -24,3 +28,65 @@
     display: table;
     height: fit-content;
 }
+.link{
+    color: black;
+}
+a:link{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+a:active{
+    text-decoration: none;
+}
+select{
+    appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #333;
+  border-radius: 10px;
+  width: fit-content;
+  height: 2.5em;
+  padding: 5px;
+  text-align: center;
+}
+.formContainer {
+    margin: auto;
+    width: 50%;
+    position: relative;
+    vertical-align:middle;
+}
+.formRow {
+    margin: auto;
+    padding: 5px;
+    flex-direction: row;
+    display: flex;
+}
+.formField{
+    margin: auto;
+}
+.formIsbnAvailableRow {
+    margin: auto;
+    padding: 5px;
+    flex-direction: row;
+    display: flex;
+    
+}
+.labelStyle {
+    color: aliceblue;
+}
+.formChildContainer {
+    width: 85%;
+    margin: auto;
+    margin-top: 10%;
+}
+p {
+    color: aliceblue;
+}
+
+
