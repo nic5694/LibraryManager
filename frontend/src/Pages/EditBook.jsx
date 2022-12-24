@@ -2,17 +2,16 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
+import DeleteBtn from "../Components/DeleteBtn";
 function EditBook() {
     const {Id} = useParams();
-    //const id = this.props.match.params.Id;
     const [book, setBook] = useState([]);
     const [formValues, setFormValues] = useState({
-        id:0,
         title: '',
         author: '',
         available: null,
         isbn: '',
-        library: null
+        library: {}
     });
 
     const getBook = () => {
@@ -30,6 +29,7 @@ function EditBook() {
         putBook();
     }
     const putBook = () => {
+        console.log(formValues);
         axios.put("http://localhost:8080/api/books/" + Id, formValues)
         .then((response) => {
             if(response.status === 200)
@@ -41,16 +41,16 @@ function EditBook() {
     }
     useEffect(() => {
         getBook();
+        
     }, []);
     useEffect(() => {
         setFormValues({
-            id: book.id,
             title: book.title,
             author: book.author,
             available: book.available, //see what this takes like to pass to the chekcbox for the value also allow modify on the values its being annoying
             isbn: book.isbn,
-            library: book.library
-        })
+            library: book.library 
+    })
     }, [book]);
     function handleChange(event) {
         setFormValues({
@@ -62,6 +62,7 @@ function EditBook() {
     const failed = () => toast.error("Failed to Add Book!");
     return(
         <div>
+            <DeleteBtn id={Id}/>
             <form onSubmit={handleUpdate}>
                 <label for="title">Title</label>
                 <input type="text" value={formValues.title} name="Title" onChange={handleChange} />

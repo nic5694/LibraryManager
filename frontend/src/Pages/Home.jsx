@@ -18,24 +18,21 @@ function Home() {
         console.log(error);
       });
   };
-  /*
-  useEffect(() => {
-    const showBooks = () => {
-      return (
-        <BookList libraryId={selectedId} />
-      );
-    };
-showBooks();
-},[selectedId]);
-*/
+  const libraryNavBar = () => {
+    return(
+        axios.delete("http://localhost:8080/api/libraries/" + library.id)
+    )
+  }
   useEffect(() => {
     getLibraryList();
   }, [])
 
   const showBooks = () => {
+    if(selectedId !== ""){
     return (
       <BookList libraryId={selectedId} />
     );
+    }
   }; 
   useEffect(() => {
     showBooks();
