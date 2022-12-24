@@ -73,5 +73,12 @@ This endpoint takes a bookId, deletes it and returns a 200 OK status
 ---
 
 ## Application Screen Shots
+![](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.46.18%20PM.png)
 
-[](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.46.18%20PM.png%0D) [](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.46.32%20PM.png%0D) [](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.46.39%20PM.png%0D) [](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.46.47%20PM.png%0D) ![](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.47.08%20PM.png) 
+![](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.46.32%20PM.png)
+
+![](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.46.39%20PM.png)
+
+![](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.46.47%20PM.png)
+
+![](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.47.08%20PM.png)
