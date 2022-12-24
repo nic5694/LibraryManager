@@ -27,8 +27,6 @@ All you need to run the project is a server that can host Java Spring Boot files
 
 ---
 
-###### Request
-
 `GET /api/books`
 This returns a list of all books in the database.
 `GET /api/books/{bookId}`
@@ -73,12 +71,13 @@ This endpoint takes a bookId, deletes it and returns a 200 OK status
 ---
 
 ## Application Screen Shots
-![](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.46.18%20PM.png)
 
-![](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.46.32%20PM.png)
+<img width="1506" alt="Screenshot 2022-12-24 at 6 46 18 PM" src="https://user-images.githubusercontent.com/101201789/209453528-09bc1944-d8df-481c-b46c-267ab479466b.png">
 
-![](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.46.39%20PM.png)
+<img width="1510" alt="Screenshot 2022-12-24 at 6 46 47 PM" src="https://user-images.githubusercontent.com/101201789/209453534-2f5a5490-8053-4184-b164-51ae5a08da32.png">
 
-![](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.46.47%20PM.png)
+<img width="1506" alt="Screenshot 2022-12-24 at 6 46 32 PM" src="https://user-images.githubusercontent.com/101201789/209453529-3d76dd07-0bce-48cc-a2c7-782ad019a1e5.png">
 
-![](../application%20screen%20shots/Screenshot%202022-12-24%20at%206.47.08%20PM.png)
+<img width="1508" alt="Screenshot 2022-12-24 at 6 46 39 PM" src="https://user-images.githubusercontent.com/101201789/209453535-1a6148e0-548f-415a-8802-3e51db61a2fa.png">
+
+<img width="1509" alt="Screenshot 2022-12-24 at 6 47 08 PM" src="https://user-images.githubusercontent.com/101201789/209453538-0b0bca26-2b4b-4383-b000-fc77b25547ac.png">
