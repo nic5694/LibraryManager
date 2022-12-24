@@ -9,4 +9,4 @@ All you need to run the project is a server that can host Java Spring Boot files
 ![UML diagram](https://github.com/nic5694/LibraryManager/blob/master/Backend/src/main/java/librarymanager/librarymanager/librarymanager.png)
 ---
 ## Relationship Diagram
-![Relationship Diagram] (/var/folders/1n/vxkt_mpd2633lz5q8_0bx82w0000gn/T/TemporaryItems/NSIRD_screencaptureui_ribPTT/Screenshot 2022-12-24 at 6.16.52 PM.png)
+![Relationship Diagram](/var/folders/1n/vxkt_mpd2633lz5q8_0bx82w0000gn/T/TemporaryItems/NSIRD_screencaptureui_ribPTT/Screenshot 2022-12-24 at 6.16.52 PM.png)
