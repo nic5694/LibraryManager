@@ -48,3 +48,10 @@ This endpoint takes a book, required fields are id, title, author, isbn, availab
 This endpoint takes a libraryId, deletes it and returns a 200 OK status.
 `DELETE /api/books/{bookId}`
 This endpoint takes a bookId, deletes it and returns a 200 OK status 
+---
+## Application Screen Shots
+![](Screenshot 2022-12-24 at 6.46.18 PM.png)
+![](Screenshot 2022-12-24 at 6.46.32 PM.png)
+![](Screenshot 2022-12-24 at 6.46.39 PM.png)
+![](Screenshot 2022-12-24 at 6.46.47 PM.png)
+![](Screenshot 2022-12-24 at 6.47.08 PM.png)
