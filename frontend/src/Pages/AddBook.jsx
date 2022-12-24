@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import { useParams } from "react-router-dom";
+//TODO add validation for the add
 function AddBook(){
     const {libraryId} = useParams();
     const [library, setLibrary] = useState([]);
@@ -15,6 +16,7 @@ function AddBook(){
                 console.log(error);
             })
     }
+    console.log(library);
     useEffect(() => {
         loadLibraries();
     }, [])
@@ -25,9 +27,9 @@ function AddBook(){
             author: event.target[1].value,
             isbn: event.target[2].value,
             available: event.target[3].checked,
-            library: library[0]
+            library: library
             }
-            axios.post("http://localhost:8080/api/books", book)
+            axios.post("http://localhost:8080/api/libraries/" + libraryId + "/books", book)
                 .then(response => {
                     console.log(response.data);
                     added();
