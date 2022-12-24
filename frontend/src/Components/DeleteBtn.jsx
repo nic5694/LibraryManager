@@ -7,7 +7,7 @@ function DeleteBtn (props) {
         axios.delete("http://localhost:8080/api/" + props.uri)
           .then(response => {
             seccess();
-            window.history.back();
+            window.history.back(); //not sure what to do with this
     })
           .catch(error => {
             failed();
@@ -16,8 +16,5 @@ function DeleteBtn (props) {
       
       const seccess = () => toast.success("Succefully Deleted Book!"); //TODO maybe add a toast to show the book was deleted successfully with the books name
       const failed = () => toast.error("Failed to Delete Book!");
-      return (
-        <Nav.Btn onClick={deleteItem}>props.btnName</Nav.Btn>
-      )
 }
 export default DeleteBtn;

@@ -48,4 +48,9 @@ public class LibraryController {
     public LibraryResponse addLibrary(@Valid @RequestBody LibraryRequest libraryRequest){
         return libraryService.addLibrary(libraryRequest);
     }
+
+    @GetMapping("/{libraryId}")
+    public LibraryResponse getLibrary(@PathVariable long libraryId){
+        return new LibraryResponse(libraryService.getLibrary(libraryId));
+    }
 }

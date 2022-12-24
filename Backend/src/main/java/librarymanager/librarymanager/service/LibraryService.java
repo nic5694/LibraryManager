@@ -43,4 +43,8 @@ public class LibraryService {
         return libraryList;
     }
 
+    public Library getLibrary(long libraryId){
+        return libraryRepository.findById(libraryId).orElseThrow(()-> new RessourceNotFoundException("Library id not found"));
+    }
+
 }

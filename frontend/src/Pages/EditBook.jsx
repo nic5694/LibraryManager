@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import DeleteBtn from "../Components/DeleteBtn";
+import NavBar from "../Components/NavBar";
 function EditBook() {
     const {Id} = useParams();
     const [book, setBook] = useState([]);
@@ -41,7 +42,7 @@ function EditBook() {
     }
     useEffect(() => {
         getBook();
-        
+        bookNavBar();
     }, []);
     useEffect(() => {
         setFormValues({
@@ -60,9 +61,18 @@ function EditBook() {
       }
     const updated = () => toast.success("Succefully Updated the Book!");
     const failed = () => toast.error("Failed to Add Book!");
+    const bookNavBar = () => {
+        if(Id === ""){
+          return (
+            <NavBar bg="light" library={false} id={Id} />
+          );
+        } else {
+        return <NavBar bg="light" library={false} id={Id} />
+        }
+      } 
     return(
         <div>
-            <DeleteBtn id={Id}/>
+            {bookNavBar()}
             <form onSubmit={handleUpdate}>
                 <label for="title">Title</label>
                 <input type="text" value={formValues.title} name="Title" onChange={handleChange} />

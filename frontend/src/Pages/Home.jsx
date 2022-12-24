@@ -2,6 +2,7 @@ import NavBar from "../Components/NavBar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import BookList from "../Components/BookList";
+import DeleteBtn from "../Components/DeleteBtn";
 
 function Home() {
   const [library, setLibrary] = useState([]);
@@ -19,10 +20,14 @@ function Home() {
       });
   };
   const libraryNavBar = () => {
-    return(
-        axios.delete("http://localhost:8080/api/libraries/" + library.id)
-    )
-  }
+    if(selectedId === ""){
+      return (
+        <NavBar bg="light" library={true} showAddLinks={true} id={selectedId} />
+      );
+    } else {
+    return <NavBar bg="light" library={true} showAddLinks={false} id={selectedId} />
+    }
+  } 
   useEffect(() => {
     getLibraryList();
   }, [])
@@ -36,6 +41,7 @@ function Home() {
   }; 
   useEffect(() => {
     showBooks();
+    libraryNavBar();
   }, [selectedId]);//needs to refresh */
 
   const handleChange = (event) => {
@@ -44,7 +50,7 @@ function Home() {
   };
     return (
         <div>
-          <NavBar bg="light" expand="lg" />
+          {libraryNavBar()}
           <div className="header">
             <h1>Welcome Library Admin</h1>
             <select name="libraryList" id="libraryList" onChange={handleChange}>

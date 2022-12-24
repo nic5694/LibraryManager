@@ -14,7 +14,7 @@ function App() {
       </Routes>
       
       <Routes>
-        <Route path="/AddBook" element={<AddBook />} />
+        <Route path="/AddBook/:libraryId" element={<AddBook />} />
       </Routes>
 
       <Routes>
