@@ -5,11 +5,8 @@
 .bookListContainer {
     margin: auto;
     width: 50%;
-    height: 80vh;
+    height: 75vh;
     overflow-y: scroll;
-}
-.bookItemContainer{
-
 }
 .mainContainer{
     background-color: rgb(47, 54, 54);;
@@ -88,5 +85,16 @@ select{
 }
 p {
     color: aliceblue;
+}
+.navBarBtn {
+    
+    display: inline-flex;
+}
+.navBarBtn1 {
+    margin:auto;
+}
+.navBarBtn2 {
+    margin: auto;
+    margin-left: 10px;
 }
 

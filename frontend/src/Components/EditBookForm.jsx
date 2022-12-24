@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function EditBookForm ({ bookId }) {
     const { handleSubmit } = useForm();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     title: '',
     author: '',
@@ -27,11 +25,8 @@ function EditBookForm ({ bookId }) {
           isbn: book.isbn,
           library: book.library
         });
-        setLoading(false);
       } catch (err) {
-        
-        setError(err);
-        setLoading(false);
+        console.log(err.message)
       }
     };
 
@@ -45,7 +40,7 @@ function EditBookForm ({ bookId }) {
       : setFormData({ ...formData, [name]: value });
   };
   const updated = () => toast.success("Succefully Updated the Book!");
-  const failed = () => toast.error("Failed to Add Book!");
+  const failed = (argument) => toast.error(argument);
 
   const onSubmit = (event) => {
     axios.put(`http://localhost:8080/api/books/${bookId}`, formData)
@@ -53,17 +48,9 @@ function EditBookForm ({ bookId }) {
         updated();
     })
     .catch ((err) =>{
-        setError(err);
+        failed(err.message)
     })
   };
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>An error occurred: {error.message}</p>;
-  }
 
   return (
     <div className='formContainer'>
@@ -130,21 +117,3 @@ function EditBookForm ({ bookId }) {
 };
 
 export default EditBookForm;
-
-
-
-/*
-    const putBook = () => {
-        axios.put("http://localhost:8080/api/books/" + formData.id, formData)
-        .then((response) => {
-            if(response.status === 200)
-                updated();
-        })
-        .catch((error) => {
-            failed();
-        })
-    }
-
-    const updated = () => toast.success("Succefully Updated the Book!");
-    const failed = () => toast.error("Failed to Add Book!");
-    */

@@ -1,7 +1,7 @@
 import NavBar from "../Components/NavBar";
 import { useState } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function AddLibrary () {
   const [name, setName] = useState('');
@@ -21,6 +21,15 @@ function AddLibrary () {
         phone: phone,
         address: address
     }
+    setName("")
+    setPhone("")
+    setAddress({
+      street: '',
+      city: '',
+      province: '',
+      postalCode: '',
+      country: '',
+    })
     axios.post("http://localhost:8080/api/libraries", library)
     .then(response => {
         sucess();
@@ -40,11 +49,21 @@ function AddLibrary () {
     });
   };
 
-  const sucess = () => toast.success("Succefully Added Library!", {
-    position: toast.POSITION.TOP_RIGHT
+  const sucess = () => toast.success("Successfully added the the library",{
+    autoClose: 2500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined
   });
-  const failed = () => toast.error("Failed to Add Library!", {
-    position: toast.POSITION.TOP_RIGHT
+    const failed = () => toast.error("Failed to Add the Library",{
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined
     });
 
   return (
@@ -58,11 +77,11 @@ function AddLibrary () {
       <div className="formRow">
         <div className="formField">
       <label className="labelStyle">Name:</label>
-      <input type="text" id="name" value={name} onChange={event => setName(event.target.value)} />
+      <input type="text" id="name" value={name} required={true} onChange={event => setName(event.target.value)} />
 </div>
 <div className="formField">
       <label className="labelStyle">Phone:</label>
-      <input type="text" id="phone" value={phone} onChange={event => setPhone(event.target.value)} />
+      <input type="text" id="phone" value={phone} required={true} onChange={event => setPhone(event.target.value)} />
       </div>
 </div>
  
@@ -70,27 +89,27 @@ function AddLibrary () {
         <div className="formRow">
           <div className="formField">
         <label className="labelStyle">Street:</label>
-        <input type="text" id="street" name="street" value={address.street} onChange={handleAddressChange} />
+        <input type="text" id="street" required={true} name="street" value={address.street} onChange={handleAddressChange} />
         </div>
         <div className="formField">
         <label className="labelStyle">City:</label>
-        <input type="text" id="city" name="city" value={address.city} onChange={handleAddressChange} />
+        <input type="text" id="city" required={true} name="city" value={address.city} onChange={handleAddressChange} />
         </div>
         </div>
         <div className="formRow">
           <div className="formField">
         <label className="labelStyle">Province:</label>
-        <input type="text" id="province" name="province" value={address.province} onChange={handleAddressChange} />
+        <input type="text" id="province" required={true} name="province" value={address.province} onChange={handleAddressChange} />
         </div>
         <div className="formField">
         <label className="labelStyle">Postal Code:</label>
-        <input type="text" id="postalCode" name="postalCode" value={address.postalCode} onChange={handleAddressChange} />
+        <input type="text" id="postalCode" required={true} name="postalCode" value={address.postalCode} onChange={handleAddressChange} />
         </div>
         </div>
         <div className="formRow">
           <div className="formField">
         <label className="labelStyle">Country:</label>
-        <input type="text" id="country" name="country" value={address.country} onChange={handleAddressChange} />
+        <input type="text" id="country" required={true} name="country" value={address.country} onChange={handleAddressChange} />
         </div>
         </div>
         <div className="formRow">
@@ -101,7 +120,6 @@ function AddLibrary () {
     </form>
     </div>
     </div>
-    <ToastContainer />
     </div>
   );
 }

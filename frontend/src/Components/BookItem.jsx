@@ -1,7 +1,7 @@
 function BookItem (item){
     return (
         <div className="itemContainer">
-            {item.item.title}
+            <b>Title:</b> {item.item.title} <b>Athor:</b> {item.item.author} 
         </div>
     )
 }
