@@ -11,10 +11,10 @@ function EditBook() {
     const bookNavBar = () => {
         if(Id === ""){
           return (
-            <NavBar bg="light" library={false} id={Id} />
+            <NavBar bg="light" library={false} showAddLinks={false}  id={Id} />
           );
         } else {
-        return <NavBar bg="light" library={false} id={Id} />
+        return <NavBar bg="light" library={false} showAddLinks={true}  id={Id} />
         }
       } 
     return(

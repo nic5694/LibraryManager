@@ -48,36 +48,60 @@ function AddLibrary () {
     });
 
   return (
+    <div>
     <div className="addLibraryFormContainer">
     <NavBar />
+    <h1 className="titles">Add Library</h1>
+    <div className="formContainer">
     <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
+      <legend className="titles">Library</legend>
+      <div className="formRow">
+        <div className="formField">
+      <label className="labelStyle">Name:</label>
       <input type="text" id="name" value={name} onChange={event => setName(event.target.value)} />
-
-      <label htmlFor="phone">Phone:</label>
+</div>
+<div className="formField">
+      <label className="labelStyle">Phone:</label>
       <input type="text" id="phone" value={phone} onChange={event => setPhone(event.target.value)} />
-
-      <fieldset>
-        <legend>Address</legend>
-        <label htmlFor="street">Street:</label>
+      </div>
+</div>
+ 
+        <legend className="titles">Address</legend>
+        <div className="formRow">
+          <div className="formField">
+        <label className="labelStyle">Street:</label>
         <input type="text" id="street" name="street" value={address.street} onChange={handleAddressChange} />
-
-        <label htmlFor="city">City:</label>
+        </div>
+        <div className="formField">
+        <label className="labelStyle">City:</label>
         <input type="text" id="city" name="city" value={address.city} onChange={handleAddressChange} />
-
-        <label htmlFor="province">Province:</label>
+        </div>
+        </div>
+        <div className="formRow">
+          <div className="formField">
+        <label className="labelStyle">Province:</label>
         <input type="text" id="province" name="province" value={address.province} onChange={handleAddressChange} />
-
-        <label htmlFor="postalCode">Postal Code:</label>
+        </div>
+        <div className="formField">
+        <label className="labelStyle">Postal Code:</label>
         <input type="text" id="postalCode" name="postalCode" value={address.postalCode} onChange={handleAddressChange} />
-
-        <label htmlFor="country">Country:</label>
+        </div>
+        </div>
+        <div className="formRow">
+          <div className="formField">
+        <label className="labelStyle">Country:</label>
         <input type="text" id="country" name="country" value={address.country} onChange={handleAddressChange} />
-      </fieldset>
-
+        </div>
+        </div>
+        <div className="formRow">
+          <div className="formField">
       <button type="submit">Add Library</button>
-      <ToastContainer />
+      </div>
+      </div>
     </form>
+    </div>
+    </div>
+    <ToastContainer />
     </div>
   );
 }
