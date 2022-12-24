@@ -1,6 +1,5 @@
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { useEffect } from "react";
-import DeleteBtn from "./DeleteBtn";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 function NavBar(props) {
@@ -12,7 +11,7 @@ function NavBar(props) {
         axios.delete("http://localhost:8080/api/libraries/"  + id)
         .then(response => {
             console.log(response)
-            window.history.back();
+            window.location.href = "/";
         })
         .catch(error => {
             console.log(error)
@@ -33,7 +32,7 @@ function NavBar(props) {
         return <Nav.Link href="/AddLibrary">Add Library</Nav.Link>
         else if(id !== "" && library)
         return (<><Nav.Link href={`/AddBook/${id}`}>Add Book</Nav.Link><Button onClick={deleteLibrary}>Delete Library</Button></>);
-        else if(id !== "" && !library)
+        else if(id !== "" && !library && showAddLinks)
         return <Button onClick={deleteBook}>Delete Book</Button>
         else return null
        

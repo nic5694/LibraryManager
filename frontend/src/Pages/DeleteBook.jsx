@@ -25,6 +25,7 @@ function DeleteBook () {
     axios.delete("http://localhost:8080/api/books/" + bookId)
       .then(response => {
         getAllbooks();
+        window.location.href = "/";
       })
       .catch(error => {
         console.log(error);

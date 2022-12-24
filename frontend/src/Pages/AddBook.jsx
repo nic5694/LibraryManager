@@ -43,7 +43,7 @@ function AddBook(){
     const failed = () => toast.error("Failed to Add Book!");
     return(
         <div className="addBookContainer">
-            <NavBar defaultNav={true}/>
+            <NavBar />
             <div className="addBookHeader">
                 <h1>Add Book</h1>
             </div>
