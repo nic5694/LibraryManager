@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import { Form } from "react-router-dom";
-import App from '/Users/nicho/Documents/GitHub/LibraryManager/frontend/src/App.css'
 function NavBar(props) {
     let library = props.library;
     let id = props.id;

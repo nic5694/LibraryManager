@@ -6,6 +6,7 @@ import AddBook from './Pages/AddBook';
 import DeleteBook from './Pages/DeleteBook';
 import EditBook from './Pages/EditBook';
 import AddLibrary from './Pages/AddLibrary';
+import './App.css'
 
 function App() {
   return (

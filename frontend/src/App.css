@@ -1,7 +1,26 @@
 .header{
     text-align: center;
 }
-.libraryListContainer {
+.bookListContainer {
     margin: auto;
     width: 50%;
+    overflow-y: scroll;
+}
+.bookItemContainer{
+
+}
+.mainContainer{
+    background-color: rgb(47, 54, 54);;
+}
+.titles{
+    color: rgb(200, 200, 200);
+}
+.itemContainer{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 95%;
+    margin: 2vh auto;
+    display: table;
+    height: fit-content;
 }

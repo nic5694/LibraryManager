@@ -1,6 +1,6 @@
 function BookItem (item){
     return (
-        <div>
+        <div className="itemContainer">
             {item.item.title}
         </div>
     )
