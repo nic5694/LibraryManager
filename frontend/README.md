@@ -10,3 +10,41 @@ All you need to run the project is a server that can host Java Spring Boot files
 ---
 ## Relationship Diagram
 ![Relationship Diagram](/var/folders/1n/vxkt_mpd2633lz5q8_0bx82w0000gn/T/TemporaryItems/NSIRD_screencaptureui_ribPTT/Screenshot 2022-12-24 at 6.16.52 PM.png)
+---
+## End-points documentation 
+##### GET
+---
+###### Request
+`GET /api/books` 
+This returns a list of all books in the database.
+`GET /api/books/{bookId}`
+This retuns a book object with all of its fields. 
+`GET /api/libraries
+This returns a list of all libraries
+`GET /api/libraries/{library_id}/books`
+This returns a list of books that are in the specified library_id
+`GET /api/libraries/{libraryId}`
+This returns a library and all of its fields.
+`GET /api/libraries/{libraryId}/books/search/query`
+This returns get request has two parameters one is the libraryId and the other one is the the parameter query you pass to search in the library if their are any books matching the query value passed.
+A get request for this endpoint would look like this
+```
+http://localhost:8080/api/libraries/1/books/search/query?query=T
+```
+---
+##### POST
+`POST /api/libraries`
+This endpoint takes a name, phone and address object and returns a id, the name, phone, and adress given 
+This method returns a 201 created status
+`POST /api/libraries/{libraryId}/books`
+This endpoint takes a id, title, author, isbn, available (boolean), and a library object. This method returns a 201 created status
+---
+##### PUT 
+`PUT /api/books/{bookID}`
+This endpoint takes a book, required fields are id, title, author, isbn, available (boolean), and a library object. This method returns a status 200 OK
+---
+##### DELETE
+`DELETE /api/libraries/{libraryId}`
+This endpoint takes a libraryId, deletes it and returns a 200 OK status.
+`DELETE /api/books/{bookId}`
+This endpoint takes a bookId, deletes it and returns a 200 OK status 
