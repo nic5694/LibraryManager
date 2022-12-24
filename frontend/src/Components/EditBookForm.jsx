@@ -48,7 +48,6 @@ function EditBookForm ({ bookId }) {
   const failed = () => toast.error("Failed to Add Book!");
 
   const onSubmit = (event) => {
-    event.preventDefault();
     axios.put(`http://localhost:8080/api/books/${bookId}`, formData)
     .then((response) =>{
         updated();

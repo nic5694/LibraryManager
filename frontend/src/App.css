@@ -79,6 +79,7 @@ select{
 }
 .labelStyle {
     color: aliceblue;
+    margin-right: 10px;
 }
 .formChildContainer {
     width: 85%;
@@ -88,5 +89,4 @@ select{
 p {
     color: aliceblue;
 }
-
 

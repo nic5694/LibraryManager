@@ -50,17 +50,41 @@ function AddBook(){
         <div className="addBookContainer">
             <NavBar />
             <div className="addBookHeader">
-                <h1>Add Book</h1>
+                <h1 className="titles">Add Book</h1>
             </div>
+            <div className="formContainer">
             <form onSubmit={PostBook}>
-                <input type="text" placeholder="Book Title" />
+                <div className="formChildContainer">
+                <div className="formRow">
+                    <div className="formField">
+                        <label className="labelStyle">Title:</label>
+                <input type="text" name="title" placeholder="Book Title" />
+                </div>
+                <div className="formField">
+                    <label className="labelStyle">Author:</label>
                 <input type="text" placeholder="Author" />
+                </div>
+                </div>
+                <div className="formRow">
+                    <div className="formField">
+                        <label className="labelStyle">ISBN:</label>
                 <input type="text" placeholder="ISBN" />
+                </div>
+                <div className="formField">
+                <label className="labelStyle">Available:</label>
                 <input type="checkbox" name="available"/>
-                <label for="available">Available</label>
+                </div>
+                </div>
+                <div className="formRow">
+                <div className="formField">
                 <button type="submit">Add Book</button>
+                </div>
+                </div>
                 <ToastContainer />
+                </div>
             </form>
+            </div>
+            
         </div>
     )
 }
