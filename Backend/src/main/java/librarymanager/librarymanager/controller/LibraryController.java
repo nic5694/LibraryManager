@@ -53,4 +53,9 @@ public class LibraryController {
     public LibraryResponse getLibrary(@PathVariable long libraryId){
         return new LibraryResponse(libraryService.getLibrary(libraryId));
     }
+
+    @DeleteMapping("/{libraryId}")
+    public void deleteLibrary(@PathVariable long libraryId){
+        libraryService.deleteLibraryById(libraryId);
+    }
 }

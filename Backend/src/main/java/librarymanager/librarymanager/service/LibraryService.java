@@ -47,4 +47,11 @@ public class LibraryService {
         return libraryRepository.findById(libraryId).orElseThrow(()-> new RessourceNotFoundException("Library id not found"));
     }
 
+    public void deleteLibraryById(long libraryId){
+        if(libraryRepository.existsById(libraryId))
+            libraryRepository.deleteById(libraryId);
+        else
+            throw new RessourceNotFoundException("Library id not found");
+    }
+
 }

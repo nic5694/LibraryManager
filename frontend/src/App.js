@@ -5,6 +5,7 @@ import {Routes, Route} from 'react-router-dom';
 import AddBook from './Pages/AddBook';
 import DeleteBook from './Pages/DeleteBook';
 import EditBook from './Pages/EditBook';
+import AddLibrary from './Pages/AddLibrary';
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
       
       <Routes>
         <Route path="/AddBook/:libraryId" element={<AddBook />} />
+      </Routes>
+
+      <Routes>
+        <Route path="/AddLibrary" element={<AddLibrary />} />
       </Routes>
 
       <Routes>

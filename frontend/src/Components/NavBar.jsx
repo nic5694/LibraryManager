@@ -12,6 +12,7 @@ function NavBar(props) {
         axios.delete("http://localhost:8080/api/libraries/"  + id)
         .then(response => {
             console.log(response)
+            window.history.back();
         })
         .catch(error => {
             console.log(error)
@@ -20,6 +21,7 @@ function NavBar(props) {
     const deleteBook = () => {
         axios.delete("http://localhost:8080/api/books/" + id)
           .then(response => {
+            window.history.back();
             console.log(response)
           })
           .catch(error => {
@@ -33,8 +35,8 @@ function NavBar(props) {
         return (<><Nav.Link href={`/AddBook/${id}`}>Add Book</Nav.Link><Button onClick={deleteLibrary}>Delete Library</Button></>);
         else if(id !== "" && !library)
         return <Button onClick={deleteBook}>Delete Book</Button>
-        else if(showAddLinks && !library)
-        return 
+        else return null
+       
       }
       useEffect(() => {
         determineNav();
