@@ -70,7 +70,7 @@ This endpoint takes a libraryId, deletes it and returns a 200 OK status.
 This endpoint takes a bookId, deletes it and returns a 200 OK status
 ---
 
-## Application Screen Shots
+## Application Screen Shots Desktop
 
 <img width="1506" alt="Screenshot 2022-12-24 at 6 46 18 PM" src="https://user-images.githubusercontent.com/101201789/209453528-09bc1944-d8df-481c-b46c-267ab479466b.png">
 
