@@ -18,16 +18,5 @@ public interface BookRepository extends CrudRepository<Book, Long> {
             "LIKE %:query% OR b.isbn LIKE %:query%)")
     List<Book> findAllByLibraryIdAndSearchQuery(@Param("libraryId") Long libraryId, @Param("query") String query);
 }
-    // void deleteBookById(long id);
-
-
-    // findByLibraryNameLike(String name);
-    //q: method that gets me all books from a library that has a name like something
-    //a:
-    // List<Book> findByLibraryIdAAndBookLike(long libraryId, String name);
-
-    //q: method that gets me all books from a library that has a name like something
-    //a:
-
 
 
