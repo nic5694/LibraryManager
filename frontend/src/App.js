@@ -21,11 +21,6 @@ function App() {
       <Routes>
         <Route path="/AddLibrary" element={<AddLibrary />} />
       </Routes>
-
-      <Routes>
-        <Route path="/DeleteBook" element={<DeleteBook />} />
-      </Routes>
-
       <Routes>
         <Route path="/EditBook/:Id" element={<EditBook />} />       
       </Routes>
