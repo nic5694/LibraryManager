@@ -31,7 +31,7 @@ All you need to run the project is a server that can host Java Spring Boot files
 This returns a list of all books in the database.
 `GET /api/books/{bookId}`
 This retuns a book object with all of its fields.
-`GET /api/libraries
+`GET /api/libraries`
 This returns a list of all libraries
 `GET /api/libraries/{library_id}/books`
 This returns a list of books that are in the specified library_id
